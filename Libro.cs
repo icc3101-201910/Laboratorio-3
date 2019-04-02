@@ -8,5 +8,10 @@ namespace Laboratorio3
         public Libro()
         {
         }
+
+        public override string ObtenerDescripcion()
+        {
+            return "";
+        }
     }
 }
