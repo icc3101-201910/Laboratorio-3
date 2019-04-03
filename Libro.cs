@@ -5,7 +5,7 @@ namespace Laboratorio3
     {
         private string autor;
 
-        public Libro(string nombre, int precio, int stock, string autor) : base(nombre, precio, stock)
+        public Libro(string nombre, string autor, int precio, int stock) : base(nombre, precio, stock)
         {
             this.autor = autor;
         }

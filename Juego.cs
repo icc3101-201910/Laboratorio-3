@@ -6,7 +6,7 @@ namespace Laboratorio3
     {
         private string plataforma;
 
-        public Juego(string nombre, int precio, int stock, string plataforma) : base(nombre, precio, stock)
+        public Juego(string nombre, string plataforma, int precio, int stock) : base(nombre, precio, stock)
         {
             this.plataforma = plataforma;
         }
