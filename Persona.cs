@@ -5,13 +5,14 @@ namespace Laboratorio3
     {
         private string rut;
 
-        public Persona()
+        public Persona(string rut)
         {
+            this.rut = rut;
         }
 
         public string ObtenerDescripcion()
         {
-            return "";
+            return rut;
         }
     }
 }

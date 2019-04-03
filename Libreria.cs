@@ -10,38 +10,52 @@ namespace Laboratorio3
         private List<Articulo> articulos;
         private List<Venta> ventas;
 
-        public Libreria()
+        public Libreria(string nombre, string direccion)
         {
+            this.nombre = nombre;
+            this.direccion = direccion;
+            articulos = new List<Articulo>();
+            ventas = new List<Venta>();
         }
 
         public bool VenderArticulo(Articulo articulo, Persona persona)
         {
+            if (articulo.TieneStock()) {
+                articulo.ReducirStock();
+                ventas.Add(new Venta(articulo, persona));
+                return true;
+            }
             return false;
         }
 
         public Articulo ObtenerArticulo(int posicion)
         {
-            return null;
+            return articulos[posicion];
         }
 
         public void AgregarArticulo(Articulo articulo)
         {
-
+            articulos.Add(articulo);
         }
 
         public int ObtenerCantidadDeVentas()
         {
-            return 0;
+            return ventas.Count;
         }
 
         public int ObtenerMontoDeVentas()
         {
-            return 0;
+            int monto = 0;
+            foreach(Venta venta in ventas)
+            {
+                monto += venta.ObtenerMontoVenta();
+            }
+            return monto;
         }
 
         public string ObtenerDescripcion()
         {
-            return "";
+            return $"{nombre} - {direccion}";
         }
     }
 }

@@ -6,13 +6,14 @@ namespace Laboratorio3
     {
         private string plataforma;
 
-        public Juego()
+        public Juego(string nombre, int precio, int stock, string plataforma) : base(nombre, precio, stock)
         {
+            this.plataforma = plataforma;
         }
 
         public override string ObtenerDescripcion()
         {
-            return "";
+            return $"{nombre} - ({plataforma})";
         }
     }
 }

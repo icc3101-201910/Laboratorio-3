@@ -7,21 +7,24 @@ namespace Laboratorio3
         protected int precio;
         protected int stock;
 
-        public Articulo()
+        public Articulo(string nombre, int precio, int stock)
         {
+            this.nombre = nombre;
+            this.precio = precio;
+            this.stock = stock;
         }
 
         public bool TieneStock()
         {
-            return false;
+            return stock > 0;
         }
 
         public void ReducirStock() {
-
+            stock -= 1;
         }
 
         public int ObtenerPrecio() {
-            return 0;
+            return precio;
         }
 
         public virtual string ObtenerDescripcion() {
