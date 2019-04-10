@@ -38,6 +38,11 @@ namespace Laboratorio3
             articulos.Add(articulo);
         }
 
+        public int ObtenerCantidadDeArticulos()
+        {
+            return articulos.Count;
+        }
+
         public int ObtenerCantidadDeVentas()
         {
             return ventas.Count;
@@ -51,6 +56,11 @@ namespace Laboratorio3
                 monto += venta.ObtenerMontoVenta();
             }
             return monto;
+        }
+
+        public Venta ObtenerUltimaVenta()
+        {
+            return ventas[ventas.Count - 1];
         }
 
         public string ObtenerDescripcion()
